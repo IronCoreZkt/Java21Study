@@ -1,0 +1,39 @@
+package com.chapter8;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class CodeKeeper {
+	ArrayList<String> list;
+	String[] codes = { "alpha", "lambda", "gamma", "delta", "zeta" };
+
+	public CodeKeeper(String[] userCodes) {
+		list = new ArrayList<String>();
+		// load bulit-in codes
+		for (int i = 0; i < codes.length; i++) {
+			addCode(codes[i]);
+		}
+		// load user codes
+		for (int i = 0; i < userCodes.length; i++) {
+			addCode(userCodes[i]);
+		}
+		// display all codes
+		/*for (Iterator<String> ite = list.iterator(); ite.hasNext();) {
+			System.out.println(ite.next());
+		}*/
+		for (String string : list) {
+			System.out.println(string);
+		}
+	}
+
+	private void addCode(String code) {
+		if (!list.contains(code)) {
+			list.add(code);
+		}
+	}
+	
+	public static void main(String[] args){
+		CodeKeeper ck =new CodeKeeper(args);
+	}
+
+}
