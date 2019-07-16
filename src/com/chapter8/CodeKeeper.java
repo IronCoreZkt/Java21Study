@@ -3,13 +3,20 @@ package com.chapter8;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * ArrayList测试，主要关于contain,add操作。
+ * @author Iron Core
+ * @date 2019年7月15日
+ * @note 
+ * 
+ */
 public class CodeKeeper {
 	ArrayList<String> list;
 	String[] codes = { "alpha", "lambda", "gamma", "delta", "zeta" };
 
 	public CodeKeeper(String[] userCodes) {
 		list = new ArrayList<String>();
-		// load bulit-in codes
+		// load built-in codes
 		for (int i = 0; i < codes.length; i++) {
 			addCode(codes[i]);
 		}
