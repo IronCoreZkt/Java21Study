@@ -19,12 +19,14 @@ public class ComicBook {
 	public static void main(String[] args) {
 		// setup a hashmap
 		HashMap<String, Float> quality = new HashMap<String, Float>();
+		quality.put("pristine mint", 5.00F);
 		quality.put("mint", 3.00F);
 		quality.put("near mint", 2.00F);
 		quality.put("very fine", 1.50F);
 		quality.put("fine", 1.00F);
 		quality.put("good", 0.50F);
 		quality.put("poor", 0.25F);
+		quality.put("coverless", 0.10F);
 		// System.out.println(quality.get("mint"));
 		Comic[] comix = new Comic[3];
 		comix[0] = new Comic("Amazing Spider-Man", "1A", "very fine", 12_000.00F);

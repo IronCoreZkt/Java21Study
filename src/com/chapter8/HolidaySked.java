@@ -3,9 +3,10 @@ package com.chapter8;
 import java.util.BitSet;
 
 /**
- * Bitset类的使用
+ * Bitset类的使用，一组开/关（布尔）值
+ * 
  * @author Iron Core
- * @date 2019年7月10日 
+ * @date 2019年7月10日
  * 
  */
 public class HolidaySked {
