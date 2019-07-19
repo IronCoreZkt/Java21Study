@@ -11,7 +11,7 @@ import java.io.IOException;
  * 
  * @author Iron Core
  * @date 2019年7月18日
- * @note {@link BufferedInputStream}继承文件流{@link FileInputStream}，FileInputStream继承InputStream抽象类。
+ * @note {@link BufferedInputStream}继承过滤流{@link FilterInputStream}。
  * 
  */
 public class BufferDemo {

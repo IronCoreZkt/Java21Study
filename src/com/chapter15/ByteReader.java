@@ -8,7 +8,7 @@ import java.io.IOException;
  * 
  * @author Iron Core
  * @date 2019年7月18日
- * @note 只写文件名则默认地址为项目文件夹下，本项目则为Java21文件夹。
+ * @note 只写文件名则默认地址为项目文件夹下，本项目则为Java21文件夹。{@link FileInputStream}继承 {@link java.io.InputStream}
  * 
  */
 public class ByteReader {
