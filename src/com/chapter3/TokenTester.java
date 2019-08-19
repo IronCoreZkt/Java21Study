@@ -18,7 +18,7 @@ class TokenTester {
 		System.out.println("Token2:" + st2.nextToken());
 		System.out.println("Token3:" + st2.nextToken());
 
-		String abc = "a";
+		String abc = "a,b,c";
 		String[] a = abc.split(",");
 		for (String t : a) {
 			System.out.println(t);
