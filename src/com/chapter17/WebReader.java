@@ -50,8 +50,8 @@ public class WebReader extends JFrame {
 			// 2．创建一个HttpURLConnection对象，它能够加载URL并连接到相应的站点。
 			HttpURLConnection conn = (HttpURLConnection) page.openConnection();
 			conn.connect();
-			
-			//同时显示报头和文档中的文本
+
+			// 同时显示报头和文档中的文本
 			String key, header;
 			int i = 0;
 			do {
@@ -68,18 +68,22 @@ public class WebReader extends JFrame {
 				}
 				i++;
 			} while (header != null);
-			
+
 			// 3．使用HttpURLConnection对象的getContent()方法来创建一个InputStreamReader，用于读取来自URL的数据流。
 			InputStreamReader in = new InputStreamReader((InputStream) conn.getContent());
 			// 4．使用输入流阅读器来创建一个BufferedReader对象，后者能够高效地从输入流中读取字符。
 			BufferedReader buff = new BufferedReader(in);
 			box.setText("Getting data ...");
 			String line;
-			do {
+			boolean eof = false;
+			while (!eof) {
 				line = buff.readLine();
-				text.append(line);
-				text.append("\n");
-			} while (line != null);
+				if (line != null) {
+					text.append(line);
+					text.append("\n");
+				} else
+					eof = true;
+			}
 			box.setText(text.toString());
 		} catch (IOException e) {
 			System.out.println("IOException: " + e.getMessage() + "\n");

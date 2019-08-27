@@ -35,7 +35,7 @@ public class Finger {
 		try (Socket digit = new Socket(host, 79); // 79一般为保留给Finger服务的端口
 				BufferedReader in = new BufferedReader(new InputStreamReader(digit.getInputStream()))) {
 			digit.setSoTimeout(20000);// 超过20s为超时
-			// Finger服务要求通过套接字发送用户名，并在后面加上回车和换行。
+			// Finger服务要求通过套接字发送要查询的用户名，并在后面加上回车和换行。
 			PrintStream out = new PrintStream(digit.getOutputStream());
 			out.print(user + "\015\012");// "\ddd"为八进制，即13CR和10LF
 			boolean eof = false;
