@@ -52,13 +52,13 @@ public class FingerServer {
 				selector.select();
 
 				// 获取等待事件的选择键selection key列表
-				Set keys = selector.selectedKeys();
-				Iterator it = keys.iterator();
+				Set<SelectionKey> keys = selector.selectedKeys();
+				Iterator<SelectionKey> it = keys.iterator();
 
 				// 遍历和处理每个键
 				while (it.hasNext()) {
 					// 获取键并移除
-					SelectionKey sKey = (SelectionKey) it.next();
+					SelectionKey sKey = it.next();
 					it.remove();
 					if (sKey.isAcceptable()) {
 						// 创建与客户端的Socket连接,返回键值关联的通道
