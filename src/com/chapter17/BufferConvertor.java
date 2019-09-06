@@ -17,10 +17,9 @@ import java.nio.charset.CharsetDecoder;
  * @author Iron Core
  * @date 2019年8月20日
  * @note 本类使用了java.nio中的缓冲区、java.nio.charset中的字符集和java.nio.channels中的通道，
- *       首先创建一个文件输入字节流，使用该流的getChannel方法创建文件通道，
- *       其次是使用该通道的size方法返回的长度创建字节缓冲区，使用通道的read方法将数据从通道读到缓冲区，
- *       如此，就有了包含原始字节数据的缓冲区，
- *       最后就是使用字符集解码字节缓冲区到字符缓冲区。
+ *       缓冲区：将数据存到内存，使之提高程序读写的性能。
+ *       字符集：转换字节缓冲和字符缓冲的数据。
+ *       通道：连接流和缓冲区的中间对象。
  *
  */
 public class BufferConvertor {
@@ -36,7 +35,7 @@ public class BufferConvertor {
 			inChannel.read(source, 0);
 			source.position(0);
 			System.out.println("Original byte data: ");
-			while (source.remaining() > 0) {
+			while (source.remaining() > 0) {//相当于hasRemaining()
 				System.out.print(source.get() + " ");
 			}
 			// convert byte data into character data
