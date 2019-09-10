@@ -32,14 +32,16 @@ import java.util.Set;
  */
 public class FingerServer {
 	public FingerServer() {
-		try {
-			// 创建非阻断式server socket channel
-			ServerSocketChannel sock = ServerSocketChannel.open();
+		
+			// 创建server socket channel和socket
+		try (ServerSocketChannel sock = ServerSocketChannel.open();
+			ServerSocket socket = sock.socket();){
+			
+			// 配置该套接字通道为非阻断式
 			sock.configureBlocking(false);
 
-			// 监视器设置监视对象的主机名host和端口port
+			// 监视器设置监视对象的主机名host和端口port并绑定到socket
 			InetSocketAddress server = new InetSocketAddress("localhost", 79);// 表示连接到的Internet地址。
-			ServerSocket socket = sock.socket();
 			socket.bind(server);
 
 			// 创建选择器Selector并注册到通道
@@ -104,7 +106,8 @@ public class FingerServer {
 	}
 
 	private void readPlan(String userName, PrintWriter pw) {
-		try (FileReader file = new FileReader(".\\src\\com\\chapter17\\"+userName + ".plan"); BufferedReader buff = new BufferedReader(file)) {
+		try (FileReader file = new FileReader(".\\src\\com\\chapter17\\"+userName + ".plan"); 
+			BufferedReader buff = new BufferedReader(file)) {
 			boolean eof = false;
 			pw.println("\nUser name: " + userName + "\n");
 			while (!eof) {
