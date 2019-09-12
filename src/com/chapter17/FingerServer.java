@@ -35,7 +35,7 @@ public class FingerServer {
 		
 			// 创建server socket channel和socket
 		try (ServerSocketChannel sock = ServerSocketChannel.open();
-			ServerSocket socket = sock.socket();){
+			ServerSocket socket = sock.socket()){
 			
 			// 配置该套接字通道为非阻断式
 			sock.configureBlocking(false);

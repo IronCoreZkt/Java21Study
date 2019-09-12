@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: Cowboy
+Date: Thu, 12 Sep 2019 07:36:19 GMT
+Content-Length: 346
+Content-Type: application/json; charset=utf-8
+Cache-Control: max-age=0, private, must-revalidate
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: 
+Access-Control-Allow-Credentials: true
+Via: 1.1 vegur
+{"week_number":37,"utc_offset":"+08:00","utc_datetime":"2019-09-12T07:36:20.197494+00:00","unixtime":1568273780,"timezone":"Asia/Shanghai","raw_offset":28800,"dst_until":null,"dst_offset":0,"dst_from":null,"dst":false,"day_of_year":255,"day_of_week":4,"datetime":"2019-09-12T15:36:20.197494+08:00","client_ip":"60.12.218.74","abbreviation":"CST"}
