@@ -1,1 +1,11 @@
 /bin/
+#忽略jar包
+*.jar
+#Eclipse file
+/target/
+/.settings/
+.classpath
+.project
+.gitignore
+#class file
+*.class
