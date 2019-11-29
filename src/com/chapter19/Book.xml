@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<book>
+	<item>
+		<title>A Song of Ice and Fire</title>
+		<author>George R. R. Martin</author>
+	</item>
+	<item>
+		<title>格林童话</title>
+		<author>安徒生</author>
+	</item>
+	<item>
+		<title>西游记</title>
+		<author>吴承恩</author>
+	</item>
+</book>
